@@ -72,7 +72,7 @@ function runOnRootFs() {
 
 function checkImageFilesystem() {
     # Check image image file system
-    e2fsck -f ${imageFile}
+    e2fsck -y -f ${imageFile}
 }
 
 function getMinimumFilesizeForImage() {
