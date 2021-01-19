@@ -12,3 +12,9 @@ docker run \
     anyfiddle/firecracker-rootfs-builder <DOCKER_IMAGE_NAME>
 
 ```
+
+The `image.ext4` will be created in `./output` folder which can be used as the root drive for starting Firecracker VMs
+
+### Build Firecracker RootFS from tar files
+
+TBD
