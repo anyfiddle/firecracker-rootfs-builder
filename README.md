@@ -9,8 +9,9 @@ If `<DOCKER_IMAGE_NAME>` is the docker image in registry, this will pull the ima
 ```sh
 docker run \
     --privileged \
-    -v {pwd}/output:/output \
-    anyfiddle/firecracker-rootfs-builder <DOCKER_IMAGE_NAME>
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v $(pwd)/output:/output \
+    anyfiddle/firecracker-rootfs-builder anyfiddle/find-ubuntu
 
 ```
 
