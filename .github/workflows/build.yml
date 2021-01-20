@@ -2,8 +2,6 @@ name: Build Rootfs
 
 on:
   push:
-    branches:
-      - main
     tags:
       - '*'
 
