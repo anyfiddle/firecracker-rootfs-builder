@@ -80,16 +80,8 @@ function getMinimumFilesizeForImage() {
     resize2fs -P ${imageFile}
 }
 
-function resizeImage() {
-    fileSize=${1:-1G}
-    # Resize image to minimum size
-    resize2fs ${imageFile} $fileSize
-}
-
 function resizeImageToMinimumSize() {
-    fileSize=${1:-1G}
-    # Resize image to minimum size
-    resize2fs ${imageFile} $fileSize
+    resize2fs -M ${imageFile} 
 }
 
 prepareOutputFolder
@@ -98,4 +90,5 @@ mountImage
 createRootFsFromContainer ${sourceContainerImageName}
 runOnRootFs /prepare.sh
 unmountImage
+resizeImageToMinimumSize
 checkImageFilesystem
